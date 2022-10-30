@@ -1,0 +1,22 @@
+﻿@using DemoUpSchoolProject.Models.Entites
+@model List<TblServices>
+
+@{
+    ViewBag.Title = "GetAllServices";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<h2>GetAllServices</h2>
+
+<table>
+    @{ 
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+            </tr> 
+        }
+    }
+    
+</table>
+

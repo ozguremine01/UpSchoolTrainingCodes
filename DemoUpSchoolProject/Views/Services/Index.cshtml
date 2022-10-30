@@ -1,0 +1,66 @@
+﻿@using DemoUpSchoolProject.Models.Entites
+@model List<TblServices>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+
+    int sayac = 0;
+
+}
+
+@*<h2>Hizmetlerim</h2>
+
+    <table class="table table-bordered">
+
+        <tr>
+            <th>#</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Şehir</th>
+            <th> Sil </th>
+            <th> Güncelle </th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Gözdem</td>
+            <td>Oğuz</td>
+            <td>Ankara</td>
+            <td><a href="#" class="btn btn-danger">Sil</a></td>
+            <td><a href="#" class="btn btn-success">Güncelle</a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Tuğba</td>
+            <td>Karacak</td>
+            <td>İzmir</td>
+            <td><a href="#" class="btn btn-danger">Sil</a></td>
+            <td><a href="#" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+    </table>
+
+    <a href="#" class="btn btn-primary">Yeni Kişi</a>*@
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>#</th>
+        <th>HizmetAdı</th>
+        <th> Sil </th>
+        <th> Güncelle </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        sayac += 1;
+<tr>
+    @*<td>@item.ServiceID</td>*@
+    <td>@sayac</td>
+    <td>@item.Title</td>
+    <td><a href="/Services/DeleteService/@item.ServiceID" class="btn btn-danger">Sil</a></td>
+    <td><a href="/Services/UpdateService/@item.ServiceID" class="btn btn-success">Güncelle</a></td>
+
+</tr>
+    }
+</table>
+
+<a href="/Services/AddService" class="btn btn-primary">Yeni Hizmet Girişi</a>
