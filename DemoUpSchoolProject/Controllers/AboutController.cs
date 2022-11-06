@@ -16,7 +16,7 @@ namespace DemoUpSchoolProject.Controllers
         public ActionResult Index()
         {
             var values = db.TblAbout.ToList();
-            return View();
+            return View(values);
         }
 
         [HttpGet]
